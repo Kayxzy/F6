@@ -177,7 +177,7 @@ async def send_text(client: Bot, message: Message):
         )
         for row in query:
             chat_id = int(row[0])
-            if chat_id not in OWNER_ID:
+            if query not in OWNER_ID:
                 try:
                     await broadcast_msg.copy(chat_id)
                     successful += 1
