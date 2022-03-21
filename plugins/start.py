@@ -100,6 +100,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
+                    protect_content=True,
                     reply_markup=reply_markup,
                 )
                 await asyncio.sleep(0.5)
@@ -109,6 +110,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
+                    protect_content=True,
                     reply_markup=reply_markup,
                 )
             except BaseException:
