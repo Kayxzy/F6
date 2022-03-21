@@ -181,7 +181,7 @@ async def send_text(client: Bot, message: Message):
             chat_id = int(row[0])
             if chat_id not in ADMINS:
                 try:
-                    await broadcast_msg.copy(chat_id, protect_content=True,)
+                    await broadcast_msg.copy(chat_id, protect_content=True)
                     successful += 1
                 except FloodWait as e:
                     await asyncio.sleep(e.x)
