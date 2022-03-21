@@ -177,20 +177,21 @@ async def send_text(client: Bot, message: Message):
         )
         for row in query:
             chat_id = int(row[0])
-            try:
-                await broadcast_msg.copy(chat_id)
-                successful += 1
-            except FloodWait as e:
-                await asyncio.sleep(e.x)
-                await broadcast_msg.copy(chat_id)
-                successful += 1
-            except UserIsBlocked:
-                blocked += 1
-            except InputUserDeactivated:
-                deleted += 1
-            except BaseException:
-                unsuccessful += 1
-            total += 1
+            if chat_id not in OWNER_ID:
+                try:
+                    await broadcast_msg.copy(chat_id)
+                    successful += 1
+                except FloodWait as e:
+                    await asyncio.sleep(e.x)
+                    await broadcast_msg.copy(chat_id)
+                    successful += 1
+                except UserIsBlocked:
+                    blocked += 1
+                except InputUserDeactivated:
+                    deleted += 1
+                except BaseException:
+                    unsuccessful += 1
+                total += 1
         status = f"""<b><u>Berhasil Broadcast</u>
 Jumlah Pengguna: <code>{total}</code>
 Berhasil: <code>{successful}</code>
