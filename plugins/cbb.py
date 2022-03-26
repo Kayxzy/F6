@@ -36,7 +36,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         try:
             await query.message.edit_text(
-                text=Data.ABOUT.format(OWNER_ID),
+                text=f"<b>Tentang Bot ini:\n\nBot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus\n\n • Creator : <a href='tg://user?id={OWNER_ID}'>Klik Disini</a>\n • Framework: <a href='https://docs.pyrogram.org'>Pyrogram</a>\n • Language: <a href='https://www.python.org'>Python</a>\n\n👨‍💻 Develoved by @Lunatic0de</b>",
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(Data.close),
             )
