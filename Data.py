@@ -9,10 +9,10 @@ class Data:
 ✨ <b>Perintah Yang Tersedia
  × /start - Mulai Bot
  × /about - Tentang Bot ini
- × /ping  - untuk mengecek bot
- × /users - lihat statistik pengguna bot
- × /batch - buat link untuk lebih dari satu file
- × /broadcast - menyiarkan/broadcast pesan apa pun ke pengguna bot
+ × /ping  - untuk mengecek bot hidup
+ × /users - untuk melihat statistik pengguna bot
+ × /batch - untuk membuat link lebih dari satu file
+ × /broadcast - untuk mengirim pesan broadcast ke pengguna bot
 
 👨‍💻 Develoved by @mrismanaziz</b>
 """
