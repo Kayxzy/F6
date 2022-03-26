@@ -2,11 +2,21 @@
 # Recode by @mrismanaziz
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+from pyrogram import filters
 from pyrogram.errors import MessageNotModified
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from bot import Bot
 from config import CHANNEL, GROUP, OWNER
+
+
+@Bot.on_message(filters.private & filters.incoming & filters.command("help"))
+async def _help(client: Bot, msg: Message):
+    await client.send_message(
+        msg.chat.id,
+        "<b>Cara Menggunakan Bot ini</b>\n" + Data.HELP,
+        reply_markup=InlineKeyboardMarkup(Data.home_buttons)
+    )
 
 
 @Bot.on_callback_query()
