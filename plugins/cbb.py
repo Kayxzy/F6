@@ -47,8 +47,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             chat_id = query.from_user.id
             message_id = query.message.message_id
             await query.message.edit_text(
-                chat_id=chat_id,
-                message_id=message_id,
                 text=Data.HELP,
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(Data.close),
