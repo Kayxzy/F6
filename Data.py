@@ -17,8 +17,8 @@ class Data:
 👨‍💻 Develoved by @mrismanaziz</b>
 """
 
-    home_buttons = [
-        [InlineKeyboardButton(text="ᴋᴇᴍʙᴀʟɪ", callback_data="home")]
+    close = [
+        [InlineKeyboardButton("• ᴛᴜᴛᴜᴘ •", callback_data="close")]
     ]
 
     generate_button = [
