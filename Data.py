@@ -7,6 +7,7 @@ from pyrogram.types import InlineKeyboardButton
 class Data:
     HELP = """
 ✨ <b>Perintah Yang Tersedia
+
  × /start - Mulai Bot
  × /about - Tentang Bot ini
  × /ping  - untuk mengecek bot hidup
@@ -23,15 +24,19 @@ class Data:
 
     buttons = [
         [
-            InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
-            InlineKeyboardButton("ᴀʙᴏᴜᴛ", callback_data="about")
+            InlineKeyboardButton("• ᴛᴇɴᴛᴀɴɢ sᴀʏᴀ •", callback_data="about"),
+            InlineKeyboardButton("• ᴛᴜᴛᴜᴘ •", callback_data="close")
         ],
     ]
 
     ABOUT = """
 <b>Tentang Bot ini:
-{} di buat untuk Membantu anda Untuk Mengambil String Session Telegram dengan Simple dan Mudah!
- • Group Support: @SharingUserbot
+
+Bot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus
+
+ • Creator: <a href='tg://user?id={}'>Klik Disini</a>
  • Framework: <a href='https://docs.pyrogram.org'>Pyrogram</a>
  • Language: <a href='https://www.python.org'>Python</a></b>
+
+👨‍💻 Develoved by @Lunatic0de
 """
