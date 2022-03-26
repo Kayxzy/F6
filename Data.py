@@ -35,9 +35,9 @@ class Data:
 
 Bot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus
 
- • Creator: [Klik Disini](tg://user?id={OWNER_ID})
+ • Creator:</b> [Klik Disini](tg://user?id={OWNER_ID})
  • Framework: <a href='https://docs.pyrogram.org'>Pyrogram</a>
  • Language: <a href='https://www.python.org'>Python</a>
 
-👨‍💻 Develoved by @Lunatic0de</b>
+👨‍💻 Develoved by @Lunatic0de
 """
