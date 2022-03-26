@@ -14,7 +14,7 @@ class Data:
  × /batch - untuk membuat link lebih dari satu file
  × /broadcast - untuk mengirim pesan broadcast ke pengguna bot
 
-👨‍💻 Develoved by @mrismanaziz</b>
+👨‍💻 Develoved by @Lunatic0de</b>
 """
 
     close = [
