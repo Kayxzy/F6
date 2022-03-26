@@ -4,6 +4,7 @@
 
 import logging
 import os
+from distutils.util import strtobool
 from dotenv import load_dotenv
 from logging.handlers import RotatingFileHandler
 
@@ -29,6 +30,9 @@ OWNER = os.environ.get("OWNER", "mrismanaziz")
 
 # Database
 DB_URI = os.environ.get("DATABASE_URL", "")
+
+# Protect Content
+PROTECT = strtobool(os.environ.get("PROTECT", "False"))
 
 # Username CH & Group
 CHANNEL = os.environ.get("CHANNEL", "Lunatic0de")
