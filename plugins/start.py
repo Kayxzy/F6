@@ -11,7 +11,7 @@ from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from bot import Bot
-from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, OWNER_ID, START_MSG
+from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, OWNER_ID, START_MSG, PROTECT
 from database.sql import add_user, full_userbase, query_msg
 from helper_func import decode, get_messages, subsall, subsch, subsgc
 
@@ -100,7 +100,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
-                    protect_content=True,
+                    protect_content=PROTECT,
                     reply_markup=reply_markup,
                 )
                 await asyncio.sleep(0.5)
@@ -110,7 +110,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
-                    protect_content=True,
+                    protect_content=PROTECT,
                     reply_markup=reply_markup,
                 )
             except BaseException:
@@ -181,11 +181,11 @@ async def send_text(client: Bot, message: Message):
             chat_id = int(row[0])
             if chat_id not in ADMINS:
                 try:
-                    await broadcast_msg.copy(chat_id, protect_content=True)
+                    await broadcast_msg.copy(chat_id, protect_content=PROTECT)
                     successful += 1
                 except FloodWait as e:
                     await asyncio.sleep(e.x)
-                    await broadcast_msg.copy(chat_id, protect_content=True)
+                    await broadcast_msg.copy(chat_id, protect_content=PROTECT)
                     successful += 1
                 except UserIsBlocked:
                     blocked += 1
