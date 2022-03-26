@@ -2,7 +2,6 @@
 # FROM File-Sharing-Man <https://github.com/mrismanaziz/File-Sharing-Man/>
 # t.me/SharingUserbot & t.me/Lunatic0de
 
-from config import OWNER_ID
 from pyrogram.types import InlineKeyboardButton
 
 class Data:
@@ -30,14 +29,14 @@ class Data:
         ],
     ]
 
-    ABOUT = f"""
+    ABOUT = """
 <b>Tentang Bot ini:
 
 Bot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus
 
- • Creator:</b> [Klik Disini](tg://user?id={OWNER_ID})
+ • Creator: @{}
  • Framework: <a href='https://docs.pyrogram.org'>Pyrogram</a>
  • Language: <a href='https://www.python.org'>Python</a>
 
-👨‍💻 Develoved by @Lunatic0de
+👨‍💻 Develoved by @Lunatic0de</b>
 """
