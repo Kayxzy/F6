@@ -15,7 +15,7 @@ from Data import Data
 async def _about(client: Bot, msg: Message):
     await client.send_message(
         msg.chat.id,
-        Data.ABOUT,
+        Data.ABOUT.format(OWNER_ID),
         disable_web_page_preview=True,
         reply_markup=InlineKeyboardMarkup(Data.close),
     )
