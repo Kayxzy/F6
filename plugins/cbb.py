@@ -8,6 +8,7 @@ from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMa
 
 from bot import Bot
 from config import CHANNEL, GROUP, OWNER
+from Data import Data
 
 
 @Bot.on_message(filters.private & filters.incoming & filters.command("help"))
@@ -15,7 +16,7 @@ async def _help(client: Bot, msg: Message):
     await client.send_message(
         msg.chat.id,
         "<b>Cara Menggunakan Bot ini</b>\n" + Data.HELP,
-        reply_markup=InlineKeyboardMarkup(Data.home_buttons)
+        reply_markup=InlineKeyboardMarkup(Data.close)
     )
 
 
