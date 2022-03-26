@@ -21,14 +21,6 @@ class Data:
         [InlineKeyboardButton("• ᴛᴜᴛᴜᴘ •", callback_data="close")]
     ]
 
-    generate_button = [
-        [InlineKeyboardButton("sᴛᴀʀᴛ ɢᴇɴᴇʀᴀᴛɪɴɢ sᴛʀɪɴɢ", callback_data="generate")]
-    ]
-
-    close = [
-        [InlineKeyboardButton("ᴅᴏɴᴀᴛᴇ", url="https://t.me/Lunatic0de/63")]
-    ]
-
     buttons = [
         [
             InlineKeyboardButton("ʜᴇʟᴘ", callback_data="help"),
