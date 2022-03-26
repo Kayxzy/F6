@@ -7,7 +7,7 @@ from pyrogram.errors import MessageNotModified
 from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from bot import Bot
-from config import CHANNEL, GROUP, OWNER
+from config import CHANNEL, GROUP, OWNER_ID
 from Data import Data
 
 
@@ -26,7 +26,7 @@ async def _help(client: Bot, msg: Message):
     await client.send_message(
         msg.chat.id,
         "<b>Cara Menggunakan Bot ini</b>\n" + Data.HELP,
-        reply_markup=InlineKeyboardMarkup(Data.close)
+        reply_markup=InlineKeyboardMarkup(Data.buttons)
     )
 
 
@@ -36,7 +36,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
     if data == "about":
         try:
             await query.message.edit_text(
-                text=f"<b>Tentang Bot ini:\n\n • Owner: @{OWNER}\n • Channel: @{CHANNEL}\n • Group: @{GROUP}\n • Source Code: <a href='https://github.com/mrismanaziz/File-Sharing-Man'>Klik Disini</a>\n • Owner Repo: @mrismanaziz</b>\n",
+                text=Data.ABOUT.format(OWNER_ID),
                 disable_web_page_preview=True,
                 reply_markup=InlineKeyboardMarkup(Data.close),
             )
