@@ -6,11 +6,14 @@ from pyrogram.types import InlineKeyboardButton
 
 class Data:
     HELP = """
-✨ <b>Perintah Yang Tersedia
+✨ <b>Perintah untuk Pengguna BOT
 
  × /start - Mulai Bot
  × /about - Tentang Bot ini
  × /ping  - untuk mengecek bot hidup
+
+✨ Perintah Untuk Admin BOT
+
  × /users - untuk melihat statistik pengguna bot
  × /batch - untuk membuat link lebih dari satu file
  × /broadcast - untuk mengirim pesan broadcast ke pengguna bot
