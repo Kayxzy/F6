@@ -3,7 +3,7 @@ psycopg2-binary
 pyrogram
 python-dotenv
 Pyromod
-speedtest
+speedtest-cli
 sqlalchemy==1.3.23
 TgCrypto
 wget
