@@ -15,6 +15,7 @@ class Data:
 
 ✨ Perintah Untuk Admin BOT
 
+ × /logs - untuk melihat logs bot
  × /users - untuk melihat statistik pengguna bot
  × /batch - untuk membuat link lebih dari satu file
  × /speedtest - Untuk Mengetes kecepatan server bot
