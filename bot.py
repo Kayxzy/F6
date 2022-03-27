@@ -51,7 +51,7 @@ class Bot(Client):
                     link = info.invite_link
                 self.invitelink = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_CHANNEL detected!\n┌ First Name: {info.title}\n└ Chat ID: {info.id}\n——"
+                    f"FORCE_SUB_CHANNEL detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -59,7 +59,7 @@ class Bot(Client):
                     "Bot tidak dapat Mengambil link invite dari FORCE_SUB_CHANNEL!"
                 )
                 self.LOGGER(__name__).warning(
-                    f"Silakan periksa kembali var FORCE_SUB_CHANNEL dan Pastikan Bot anda Admin di Channel Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Channel Saat Ini: {FORCE_SUB_CHANNEL}"
+                    f"Silakan periksa kembali var FORCE_SUB_CHANNEL dan Pastikan Bot anda Admin di Channel Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Channel Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -74,7 +74,7 @@ class Bot(Client):
                     link = info.invite_link
                 self.invitelink2 = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_GROUP detected!\n┌ First Name: {info.title}\n└ Chat ID: {info.id}\n——"
+                    f"FORCE_SUB_GROUP detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -82,7 +82,7 @@ class Bot(Client):
                     "Bot tidak dapat Mengambil link invite dari FORCE_SUB_GROUP!"
                 )
                 self.LOGGER(__name__).warning(
-                    f"Silakan periksa kembali var FORCE_SUB_GROUP dan Pastikan Bot anda Admin di Group Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Group Saat Ini: {FORCE_SUB_GROUP}"
+                    f"Silakan periksa kembali var FORCE_SUB_GROUP dan Pastikan Bot anda Admin di Group Tersebut dengan izin link invite Pengguna melalui link undangan, Chat ID F-Subs Group Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -94,12 +94,12 @@ class Bot(Client):
             test = await self.send_message(chat_id=db_channel.id, text="Test Message", disable_notification=True)
             await test.delete()
             self.LOGGER(__name__).info(
-                f"CHANNEL_ID Database detected!\n┌ First Name: {db_channel.title}\n└ Chat ID: {db_channel.id}\n——"
+                f"CHANNEL_ID Database detected!\n┌ Title: {db_channel.title}\n└ Chat ID: {db_channel.id}\n——"
             )
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(
-                f"Pastikan Bot adalah Admin di Channel DataBase, dan Periksa kembali Nilai CHANNEL_ID, Nilai Saat Ini: {CHANNEL_ID}"
+                f"Pastikan Bot adalah Admin di Channel DataBase, dan Periksa kembali Nilai CHANNEL_ID, Nilai Saat Ini: {db_channel.id}"
             )
             self.LOGGER(__name__).info(
                 "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
