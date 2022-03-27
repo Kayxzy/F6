@@ -7,7 +7,6 @@
 #
 # All rights reserved.
 
-import asyncio
 import os
 
 import speedtest
@@ -47,7 +46,6 @@ async def run_speedtest(client: Bot, message: Message):
 **Name:** {result['server']['name']}
 **Country:** {result['server']['country']}, {result['server']['cc']}
 **Sponsor:** {result['server']['sponsor']}
-**Latency:** {result['server']['latency']}
 
 ⚡️ **Ping:** {result['ping']}"""
     msg = await client.send_photo(
