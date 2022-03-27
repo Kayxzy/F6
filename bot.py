@@ -44,13 +44,14 @@ class Bot(Client):
 
         if FORCE_SUB_CHANNEL:
             try:
+                title = (await self.get_chat(FORCE_SUB_CHANNEL)).title
                 link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_CHANNEL)
                     link = (await self.get_chat(FORCE_SUB_CHANNEL)).invite_link
                 self.invitelink = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_CHANNEL detected!\n└ Chat ID: {FORCE_SUB_CHANNEL}\n——"
+                    f"FORCE_SUB_CHANNEL detected!\n┌ First Name: {title}\n└ Chat ID: {FORCE_SUB_CHANNEL}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -66,13 +67,14 @@ class Bot(Client):
                 sys.exit()
         if FORCE_SUB_GROUP:
             try:
+                title = (await self.get_chat(FORCE_SUB_GROUP)).title
                 link = (await self.get_chat(FORCE_SUB_GROUP)).invite_link
                 if not link:
                     await self.export_chat_invite_link(FORCE_SUB_GROUP)
                     link = (await self.get_chat(FORCE_SUB_GROUP)).invite_link
                 self.invitelink2 = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_GROUP detected!\n└ Chat ID: {FORCE_SUB_GROUP}\n——"
+                    f"FORCE_SUB_GROUP detected!\n┌ First Name: {title}\n└ Chat ID: {FORCE_SUB_GROUP}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -92,7 +94,7 @@ class Bot(Client):
             test = await self.send_message(chat_id=db_channel.id, text="Test Message", disable_notification=True)
             await test.delete()
             self.LOGGER(__name__).info(
-                f"CHANNEL_ID Database detected!\n└ Chat ID: {CHANNEL_ID}\n——"
+                f"CHANNEL_ID Database detected!\n┌ First Name: {db_channel.title}\n└ Chat ID: {CHANNEL_ID}\n——"
             )
         except Exception as e:
             self.LOGGER(__name__).warning(e)
