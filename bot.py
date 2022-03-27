@@ -52,7 +52,7 @@ class Bot(Client):
                     link = info.invite_link
                 self.invitelink = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_CHANNEL detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+                    f"{var} detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -76,7 +76,7 @@ class Bot(Client):
                     link = info.invite_link
                 self.invitelink2 = link
                 self.LOGGER(__name__).info(
-                    f"FORCE_SUB_GROUP detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+                    f"{var} detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
                 )
             except Exception as a:
                 self.LOGGER(__name__).warning(a)
@@ -91,17 +91,18 @@ class Bot(Client):
                 )
                 sys.exit()
         try:
+            var = "CHANNEL_ID"
             db_channel = await self.get_chat(CHANNEL_ID)
             self.db_channel = db_channel
             test = await self.send_message(chat_id=db_channel.id, text="Test Message", disable_notification=True)
             await test.delete()
             self.LOGGER(__name__).info(
-                f"CHANNEL_ID Database detected!\n┌ Title: {db_channel.title}\n└ Chat ID: {db_channel.id}\n——"
+                f"{var} Database detected!\n┌ Title: {db_channel.title}\n└ Chat ID: {db_channel.id}\n——"
             )
         except Exception as e:
             self.LOGGER(__name__).warning(e)
             self.LOGGER(__name__).warning(
-                f"Pastikan Bot adalah Admin di Channel DataBase, dan Periksa kembali Nilai CHANNEL_ID, Nilai Saat Ini: {db_channel.id}"
+                f"Pastikan Bot adalah Admin di Channel DataBase, dan Periksa kembali Nilai {var}, Nilai Saat Ini: {db_channel.id}"
             )
             self.LOGGER(__name__).info(
                 "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
