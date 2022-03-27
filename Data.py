@@ -8,7 +8,7 @@ class Data:
     HELP = """
 <b> ❏ Perintah untuk Pengguna BOT
  ├ /start   - Mulai Bot
- ├ /about - Tentang Bot ini
+ ├ /about  - Tentang Bot ini
  ├ /help    - Bantuan Perintah Bot ini
  └ /ping    - Untuk mengecek bot hidup
 
