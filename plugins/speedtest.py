@@ -19,28 +19,24 @@ from bot import Bot
 from config import ADMINS
 
 
-def testspeed(m):
+@Bot.on_message(filters.command("speedtest") & filters.user(ADMINS))
+async def run_speedtest(_, message: Message):
+    m = await message.reply_text("⚡️ running server speedtest")
     try:
         test = speedtest.Speedtest()
         test.get_best_server()
-        m = m.edit("Running Download SpeedTest")
+        m = await m.edit("⚡️ running download speedtest..")
         test.download()
-        m = m.edit("Running Upload SpeedTest")
+        m = await m.edit("⚡️ running upload speedtest...")
         test.upload()
         test.results.share()
         result = test.results.dict()
-        m = m.edit("Sharing SpeedTest Results")
-        path = wget.download(result["share"])
     except Exception as e:
-        return m.edit(e)
-    return result, path
+        await m.edit(e)
+        return
+    m = await m.edit("🔄 sharing speedtest results")
+    path = wget.download(result["share"])
 
-
-@Bot.on_message(filters.command("speedtest") & filters.user(ADMINS))
-async def speedtest_function(client: Bot, message: Message):
-    m = await message.reply_text("Running Speed test")
-    loop = asyncio.get_event_loop()
-    result, path = await loop.run_in_executor(None, testspeed, m)
     output = f"""💡 **SpeedTest Results**
     
 <u>**Client:**</u>
@@ -54,7 +50,7 @@ async def speedtest_function(client: Bot, message: Message):
 **Latency:** {result['server']['latency']}
 
 ⚡️ **Ping:** {result['ping']}"""
-    msg = await client.send_photo(
+    msg = await app.send_photo(
         chat_id=message.chat.id, photo=path, caption=output
     )
     os.remove(path)
