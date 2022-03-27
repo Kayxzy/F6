@@ -2,13 +2,12 @@
 # Recode by @mrismanaziz
 # t.me/SharingUserbot & t.me/Lunatic0de
 
+from bot import Bot
+from config import OWNER
+from Data import Data
 from pyrogram import filters
 from pyrogram.errors import MessageNotModified
-from pyrogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup, Message
-
-from bot import Bot
-from config import CHANNEL, GROUP, OWNER
-from Data import Data
+from pyrogram.types import CallbackQuery, InlineKeyboardMarkup, Message
 
 
 @Bot.on_message(filters.private & filters.incoming & filters.command("about"))
@@ -26,7 +25,7 @@ async def _help(client: Bot, msg: Message):
     await client.send_message(
         msg.chat.id,
         "<b>Cara Menggunakan Bot ini</b>\n" + Data.HELP,
-        reply_markup=InlineKeyboardMarkup(Data.buttons)
+        reply_markup=InlineKeyboardMarkup(Data.buttons),
     )
 
 
@@ -44,8 +43,6 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             pass
     elif data == "help":
         try:
-            chat_id = query.from_user.id
-            message_id = query.message.message_id
             await query.message.edit_text(
                 text="<b>Cara Menggunakan Bot ini</b>\n" + Data.HELP,
                 disable_web_page_preview=True,
