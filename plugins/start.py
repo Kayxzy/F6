@@ -6,14 +6,31 @@ import asyncio
 from datetime import datetime
 from time import time
 
-from pyrogram import Client, filters
-from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
-from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
-
 from bot import Bot
-from config import ADMINS, CUSTOM_CAPTION, DISABLE_CHANNEL_BUTTON, FORCE_MSG, OWNER_ID, START_MSG, PROTECT
+from config import (
+    ADMINS,
+    CUSTOM_CAPTION,
+    DISABLE_CHANNEL_BUTTON,
+    FORCE_MSG,
+    PROTECT,
+    START_MSG,
+)
 from database.sql import add_user, full_userbase, query_msg
-from helper_func import decode, get_messages, subsall, subsch, subsgc
+from pyrogram import filters
+from pyrogram.errors import FloodWait, InputUserDeactivated, UserIsBlocked
+from pyrogram.types import InlineKeyboardMarkup, Message
+
+from helper_func import (
+    decode,
+    get_messages,
+    subsall,
+    subsfour,
+    subsone,
+    subsonetwo,
+    subsonetwotri,
+    substri,
+    substwo,
+)
 
 from .button import fsub_button, start_button
 
@@ -21,8 +38,8 @@ START_TIME = datetime.utcnow()
 START_TIME_ISO = START_TIME.replace(microsecond=0).isoformat()
 TIME_DURATION_UNITS = (
     ("week", 60 * 60 * 24 * 7),
-    ("day", 60 ** 2 * 24),
-    ("hour", 60 ** 2),
+    ("day", 60**2 * 24),
+    ("hour", 60**2),
     ("min", 60),
     ("sec", 1),
 )
@@ -39,7 +56,17 @@ async def _human_time_duration(seconds):
     return ", ".join(parts)
 
 
-@Bot.on_message(filters.command("start") & filters.private & subsall & subsch & subsgc)
+@Bot.on_message(
+    filters.command("start")
+    & filters.private
+    & subsall
+    & subsone
+    & substwo
+    & substri
+    & subsfour
+    & subsonetwo
+    & subsonetwotri
+)
 async def start_command(client: Bot, message: Message):
     id = message.from_user.id
     user_name = "@" + message.from_user.username if message.from_user.username else None
