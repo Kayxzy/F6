@@ -17,7 +17,7 @@ async def _about(client: Bot, msg: Message):
         msg.chat.id,
         Data.ABOUT.format(client.username, OWNER),
         disable_web_page_preview=True,
-        reply_markup=InlineKeyboardMarkup(Data.close),
+        reply_markup=InlineKeyboardMarkup(Data.mbuttons),
     )
 
 
@@ -38,7 +38,7 @@ async def cb_handler(client: Bot, query: CallbackQuery):
             await query.message.edit_text(
                 text=Data.ABOUT.format(client.username, OWNER),
                 disable_web_page_preview=True,
-                reply_markup=InlineKeyboardMarkup(Data.close),
+                reply_markup=InlineKeyboardMarkup(Data.mbuttons),
             )
         except MessageNotModified:
             pass
