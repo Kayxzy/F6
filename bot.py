@@ -92,7 +92,7 @@ class Bot(Client):
             sys.exit()
 
         self.LOGGER(__name__).info(
-            f"TG_BOT_TOKEN detected!\n┌ First Name: {namebot}\n└ Username: @{username}\n——\n"
+            f"TG_BOT_TOKEN detected!\n┌ First Name: {namebot}\n└ Username: @{username}\n——"
         )
         self.LOGGER(__name__).info(
             f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{OWNER}\nJika @{OWNER} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
