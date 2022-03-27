@@ -37,11 +37,11 @@ class Bot(Client):
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
-        username = usr_bot_me.username
-        namebot = usr_bot_me.first_name
+        self.username = usr_bot_me.username
+        self.namebot = usr_bot_me.first_name
         
         self.LOGGER(__name__).info(
-            f"TG_BOT_TOKEN detected!\n┌ First Name: {namebot}\n└ Username: @{username}\n——"
+            f"TG_BOT_TOKEN detected!\n┌ First Name: {self.namebot}\n└ Username: @{self.username}\n——"
         )
 
         if FORCE_SUB_1:
