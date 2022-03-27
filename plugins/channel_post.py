@@ -4,12 +4,12 @@
 
 import asyncio
 
+from bot import Bot
+from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from pyrogram import Client, filters
 from pyrogram.errors import FloodWait
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from bot import Bot
-from config import ADMINS, CHANNEL_ID, DISABLE_CHANNEL_BUTTON
 from helper_func import encode
 
 
@@ -17,7 +17,19 @@ from helper_func import encode
     filters.private
     & filters.user(ADMINS)
     & ~filters.command(
-        ["about", "batch", "broadcast", "genlink", "help", "logs", "ping", "speedtest", "start", "uptime", "users"]
+        [
+            "about",
+            "batch",
+            "broadcast",
+            "genlink",
+            "help",
+            "logs",
+            "ping",
+            "speedtest",
+            "start",
+            "uptime",
+            "users",
+        ]
     )
 )
 async def channel_post(client: Client, message: Message):
