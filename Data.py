@@ -32,7 +32,7 @@ class Data:
     ABOUT = """
 <b>Tentang Bot ini:
 
-Bot Telegram untuk menyimpan Posting atau File yang dapat Diakses melalui Link Khusus
+{} adalah Bot Telegram untuk menyimpan Postingan atau File yang dapat Diakses melalui Link Khusus.
 
  • Creator: @{}
  • Framework: <a href='https://docs.pyrogram.org'>Pyrogram</a>
