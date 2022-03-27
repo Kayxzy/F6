@@ -15,7 +15,7 @@ async def get_bot_logs(client: Bot, m: Message):
             await m.reply_document(
                 bot_log_path,
                 quote=True,
-                caption="📁 <b>Ini Logs Bot ini Anda</b>",
+                caption="<b>Ini Logs Bot ini</b>",
             )
         except Exception as e:
             os.remove(bot_log_path)
