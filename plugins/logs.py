@@ -9,7 +9,7 @@ from config import ADMINS
 
 @Bot.on_message(filters.command("logs") & filters.user(ADMINS))
 async def get_bot_logs(client: Bot, m: Message):
-    bot_log_path = "logs.txt'
+    bot_log_path = "logs.txt"
     if os.path.exists(bot_log_path):
         try:
             await m.reply_document(
