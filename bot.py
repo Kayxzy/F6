@@ -35,8 +35,8 @@ class Bot(Client):
     async def start(self):
         await super().start()
         usr_bot_me = await self.get_me()
-        self.username = usr_bot_me.username
-        self.namebot = usr_bot_me.first_name
+        username = usr_bot_me.username
+        namebot = usr_bot_me.first_name
 
         if FORCE_SUB_CHANNEL:
             try:
