@@ -37,6 +37,10 @@ class Bot(Client):
         usr_bot_me = await self.get_me()
         username = usr_bot_me.username
         namebot = usr_bot_me.first_name
+        
+        self.LOGGER(__name__).info(
+            f"TG_BOT_TOKEN detected!\n┌ First Name: {namebot}\n└ Username: @{username}\n——"
+        )
 
         if FORCE_SUB_CHANNEL:
             try:
@@ -91,9 +95,6 @@ class Bot(Client):
             )
             sys.exit()
 
-        self.LOGGER(__name__).info(
-            f"TG_BOT_TOKEN detected!\n┌ First Name: {namebot}\n└ Username: @{username}\n——"
-        )
         self.LOGGER(__name__).info(
             f"[🔥 BERHASIL DIAKTIFKAN! 🔥]\n\nBOT Dibuat oleh @{OWNER}\nJika @{OWNER} Membutuhkan Bantuan, Silahkan Tanyakan di Grup https://t.me/SharingUserbot"
         )
