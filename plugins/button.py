@@ -10,7 +10,7 @@ def start_button(client):
     if not FORCE_SUB_1 and not FORCE_SUB_2:
         buttons = [
             [
-                InlineKeyboardButton(text="• ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs •", callback_data="about"),
+                InlineKeyboardButton(text="• ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs •", callback_data="help"),
                 InlineKeyboardButton(text="• ᴛᴜᴛᴜᴘ •", callback_data="close"),
             ],
         ]
