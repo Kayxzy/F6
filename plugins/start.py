@@ -16,7 +16,7 @@ from config import (
 from database.sql import add_user, full_userbase
 from pyrogram import filters
 from pyrogram.errors import FloodWait
-from pyrogram.types import InlineKeyboardMarkup, Message
+from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
 from helper_func import (
     decode,
