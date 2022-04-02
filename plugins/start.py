@@ -120,7 +120,12 @@ async def start_command(client: Bot, message: Message):
             except BaseException:
                 pass
     else:
-        out = start_button(client)
+        buttons = [
+            [
+                InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help"),
+                InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close"),
+            ],
+        ]
         await message.reply_text(
             text=START_MSG.format(
                 first=message.from_user.first_name,
@@ -131,7 +136,7 @@ async def start_command(client: Bot, message: Message):
                 mention=message.from_user.mention,
                 id=message.from_user.id,
             ),
-            reply_markup=InlineKeyboardMarkup(out),
+            reply_markup=InlineKeyboardMarkup(buttons),
             disable_web_page_preview=True,
             quote=True,
         )
