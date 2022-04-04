@@ -15,6 +15,8 @@ from config import (
     FORCE_SUB_2,
     FORCE_SUB_3,
     FORCE_SUB_4,
+    FORCE_SUB_5,
+    FORCE_SUB_6,
     LOGGER,
     OWNER,
     TG_BOT_TOKEN,
@@ -62,7 +64,7 @@ class Bot(Client):
                     f"Bot tidak dapat Mengambil link invite dari {var}!"
                 )
                 self.LOGGER(__name__).info(
-                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel Tersebut, Chat ID Saat Ini: {info.id}"
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -87,7 +89,7 @@ class Bot(Client):
                     f"Bot tidak dapat Mengambil link invite dari {var}!"
                 )
                 self.LOGGER(__name__).info(
-                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel Tersebut, Chat ID Saat Ini: {info.id}"
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -112,7 +114,7 @@ class Bot(Client):
                     f"Bot tidak dapat Mengambil link invite dari {var}!"
                 )
                 self.LOGGER(__name__).info(
-                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel Tersebut, Chat ID Saat Ini: {info.id}"
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
@@ -137,7 +139,59 @@ class Bot(Client):
                     f"Bot tidak dapat Mengambil link invite dari {var}!"
                 )
                 self.LOGGER(__name__).info(
-                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel Tersebut, Chat ID Saat Ini: {info.id}"
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
+                )
+                self.LOGGER(__name__).info(
+                    "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
+                )
+                sys.exit()
+
+
+        if FORCE_SUB_5:
+            try:
+                var = "FORCE_SUB_5"
+                info = await self.get_chat(FORCE_SUB_5)
+                link = info.invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_5)
+                    link = info.invite_link
+                self.invitelink5 = link
+                self.LOGGER(__name__).info(
+                    f"{var} detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+                )
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    f"Bot tidak dapat Mengambil link invite dari {var}!"
+                )
+                self.LOGGER(__name__).info(
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
+                )
+                self.LOGGER(__name__).info(
+                    "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
+                )
+                sys.exit()
+
+
+        if FORCE_SUB_6:
+            try:
+                var = "FORCE_SUB_6"
+                info = await self.get_chat(FORCE_SUB_6)
+                link = info.invite_link
+                if not link:
+                    await self.export_chat_invite_link(FORCE_SUB_6)
+                    link = info.invite_link
+                self.invitelink6 = link
+                self.LOGGER(__name__).info(
+                    f"{var} detected!\n┌ Title: {info.title}\n└ Chat ID: {info.id}\n——"
+                )
+            except Exception as a:
+                self.LOGGER(__name__).warning(a)
+                self.LOGGER(__name__).warning(
+                    f"Bot tidak dapat Mengambil link invite dari {var}!"
+                )
+                self.LOGGER(__name__).info(
+                    f"Silakan tambahkan @{namebot} ke {var} dan Pastikan @{namebot} adalah Admin di Channel/Group Tersebut, Chat ID Saat Ini: {info.id}"
                 )
                 self.LOGGER(__name__).info(
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
