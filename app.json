@@ -61,7 +61,7 @@
       "value": "0"
     },
     "PROTECT_CONTENT": {
-      "description": "Untuk Mencegah pengguna bot untuk mendownload/memforward konten yang dikirim di bot [ Bila ingin diaktifkan ubah ke True ]",
+      "description": "Untuk Mencegah pengguna bot untuk mendownload/memforward/mengscreenshot konten yang dikirim di bot [ Bila ingin diaktifkan ubah ke True ]",
       "value": "False"
     },
     "START_MESSAGE": {
