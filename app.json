@@ -60,6 +60,10 @@
       "description": "Masukan ID dari Channel Atau Group Untuk Wajib Subscribenya, Bila tidak ingin dipakai Fsubnya, isi dengan 0",
       "value": "0"
     },
+    "PROTECT_CONTENT": {
+      "description": "Untuk Mencegah pengguna bot untuk mendownload/memforward konten yang dikirim di bot [ Bila ingin diaktifkan ubah ke True ]",
+      "value": "False"
+    },
     "START_MESSAGE": {
       "description": "Pesan /start memulai awalan ke bot, Gunakan format parsemode HTML",
       "value": "<b>Hello {first}\n\nSaya dapat menyimpan file pribadi di Channel Tertentu dan pengguna lain dapat mengaksesnya dari link khusus.</b>"
