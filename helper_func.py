@@ -6,7 +6,7 @@ import asyncio
 import base64
 import re
 
-from config import ADMINS, FORCE_SUB_1, FORCE_SUB_2, FORCE_SUB_3, FORCE_SUB_4
+from config import ADMINS, FORCE_SUB_1, FORCE_SUB_2, FORCE_SUB_3, FORCE_SUB_4, FORCE_SUB_5, FORCE_SUB_6
 from pyrogram import filters
 from pyrogram.errors import FloodWait
 from pyrogram.errors.exceptions.bad_request_400 import UserNotParticipant
@@ -117,8 +117,8 @@ async def subsonetwotri(filter, client, update):
     return member.status in ["creator", "administrator", "member"]
 
 
-# 4 Subs
-async def subsall(filter, client, update):
+# Flexiable 4 Subs
+async def subsfours(filter, client, update):
     if not FORCE_SUB_1:
         return True
     if not FORCE_SUB_2:
@@ -149,6 +149,87 @@ async def subsall(filter, client, update):
 
     return member.status in ["creator", "administrator", "member"]
 
+# Flexiable 5 Subs
+async def subsfives(filter, client, update):
+    if not FORCE_SUB_1:
+        return True
+    if not FORCE_SUB_2:
+        return True
+    if not FORCE_SUB_3:
+        return True
+    if not FORCE_SUB_4:
+        return True
+    if not FORCE_SUB_5:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_1, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_2, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_3, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_4, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_5, user_id=user_id)
+    except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
+
+# Flexiable 6 Subs
+async def subssixs(filter, client, update):
+    if not FORCE_SUB_1:
+        return True
+    if not FORCE_SUB_2:
+        return True
+    if not FORCE_SUB_3:
+        return True
+    if not FORCE_SUB_4:
+        return True
+    if not FORCE_SUB_5:
+        return True
+    if not FORCE_SUB_6:
+        return True
+    user_id = update.from_user.id
+    if user_id in ADMINS:
+        return True
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_1, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_2, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_3, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_4, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_5, user_id=user_id)
+    except UserNotParticipant:
+        return False
+    try:
+        member = await client.get_chat_member(chat_id=FORCE_SUB_6, user_id=user_id)
+    except UserNotParticipant:
+        return False
+
+    return member.status in ["creator", "administrator", "member"]
 
 async def encode(string):
     string_bytes = string.encode("ascii")
@@ -207,11 +288,12 @@ async def get_message_id(client, message):
             return msg_id
 
 
-subsall = filters.create(subsall)
 subsone = filters.create(subsone)
 substwo = filters.create(substwo)
 substri = filters.create(substri)
 subsfour = filters.create(subsfour)
 subsonetwo = filters.create(subsonetwo)
 subsonetwotri = filters.create(subsonetwotri)
-
+subsfours = filters.create(subsfours)
+subsfives = filters.create(subsfives)
+subssixs = filters.create(subssixs)
