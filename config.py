@@ -32,7 +32,7 @@ OWNER = os.environ.get("OWNER", "mrismanaziz")
 DB_URI = os.environ.get("DATABASE_URL", "")
 
 # Protect Content
-PROTECT = strtobool(os.environ.get("PROTECT", "False"))
+PROTECT_CONTENT = strtobool(os.environ.get("PROTECT_CONTENT", "False"))
 
 # Username CH & Group
 CHANNEL = os.environ.get("CHANNEL", "Lunatic0de")
