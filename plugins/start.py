@@ -21,8 +21,10 @@ from pyrogram.types import InlineKeyboardMarkup, Message
 from helper_func import (
     decode,
     get_messages,
-    subsall,
     subsfour,
+    subsfours,
+    subsfives,
+    subssixs,
     subsone,
     subsonetwo,
     subsonetwotri,
@@ -43,6 +45,9 @@ from .button import fsub_button, start_button
     & subsfour
     & subsonetwo
     & subsonetwotri
+    & subsfours
+    & subsfives
+    & subssixs
 )
 async def start_command(client: Bot, message: Message):
     id = message.from_user.id
