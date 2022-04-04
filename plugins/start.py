@@ -10,7 +10,7 @@ from config import (
     CUSTOM_CAPTION,
     DISABLE_CHANNEL_BUTTON,
     FORCE_MSG,
-    PROTECT,
+    PROTECT_CONTENT,
     START_MSG,
 )
 from database.sql import add_user, full_userbase
@@ -109,7 +109,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
-                    protect_content=PROTECT,
+                    protect_content=PROTECT_CONTENT,
                     reply_markup=reply_markup,
                 )
                 await asyncio.sleep(0.5)
@@ -119,7 +119,7 @@ async def start_command(client: Bot, message: Message):
                     chat_id=message.from_user.id,
                     caption=caption,
                     parse_mode="html",
-                    protect_content=PROTECT,
+                    protect_content=PROTECT_CONTENT,
                     reply_markup=reply_markup,
                 )
             except BaseException:
