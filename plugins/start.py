@@ -38,7 +38,6 @@ from .button import fsub_button, start_button
 @Bot.on_message(
     filters.command("start")
     & filters.private
-    & subsall
     & subsone
     & substwo
     & substri
