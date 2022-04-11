@@ -47,6 +47,7 @@ class Bot(Client):
             )
         except Exception as a:
             self.LOGGER(__name__).warning(a)
+            sys.exit()
 
         if FORCE_SUB_1:
             try:
