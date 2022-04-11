@@ -47,7 +47,6 @@ class Bot(Client):
             )
         except Exception as a:
             self.LOGGER(__name__).warning(a)
-            self.LOGGER(__name__).info("TG_BOT_TOKEN yang anda masukan tidak valid.")
             self.LOGGER(__name__).info(
                 "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
             )
