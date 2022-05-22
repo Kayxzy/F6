@@ -28,6 +28,10 @@ OWNER_ID = int(os.environ.get("OWNER_ID", ""))
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "mrismanaziz")
 
+# Heroku Credentials for updater.
+HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
+HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
+
 # Database
 DB_URI = os.environ.get("DATABASE_URL", "")
 
