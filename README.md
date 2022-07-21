@@ -12,13 +12,12 @@ Saya Kira Ini Akan Bermanfaat Bagi Banyak Orang.. 😇.
 - Dapat di-deploy di heroku & vps.
 - Pesan sambutan & Forcesub yang dapat dicustom.
 - Lebih dari satu Posting dalam Satu Link (batch).
-- Fleksibel FSUB Button bisa 1 button atau 2 button menyesuaikan dengan var yang di isi.
+- Fleksibel FSUB Button bisa 1 - 6 button menyesuaikan dengan var yang di isi.
 
 ### Setup
 
 - Tambahkan bot ke Channel Database dengan semua izin admin
 - Tambahkan bot ke Channel ForceSub tambahkan bot sebagai ADMIN
-- Tambahkan bot ke Group ForceSub tambahkan bot sebagai ADMIN
 
 ##
 ### Installation
@@ -68,8 +67,7 @@ bash start
 * `ADMINS` Masukan User ID untuk mendapatkan hak Admin BOT [Hanya dapat membuat link]
 * `START_MESSAGE` Opsional: Pesan /start memulai awalan ke bot, Gunakan <a href='https://github.com/mrismanaziz/File-Sharing-Man/blob/main/README.md#start_message'>format</a> parsemode HTML 
 * `FORCE_SUB_MESSAGE` Opsional: Pesan Paksa Subscribe bot, Gunakan Format parsemode HTML
-* `FORCE_SUB_CHANNEL` Masukan ID dari Channel Untuk Wajib Subscribenya
-* `FORCE_SUB_GROUP` Masukan ID dari Group Untuk Wajib Subscribenya
+* `FORCE_SUB_1` sampai dengan `FORCE_SUB_6` Masukan ID dari Channel Untuk Wajib Subscribenya
 
 ### Extra Variables
 
