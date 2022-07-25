@@ -51,7 +51,10 @@ async def cb_handler(client: Bot, query: CallbackQuery):
         except MessageNotModified:
             pass
     elif data == "close":
-        await query.message.delete()
+        try:
+            await query.message.delete()
+        except BaseException:
+            pass
         try:
             await query.message.reply_to_message.delete()
         except BaseException:
