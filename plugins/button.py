@@ -127,6 +127,27 @@ def start_button(client):
         ]
         return buttons
 
+    # Flexiable 2 Subs CH
+    if (
+        FORCE_SUB_1
+        and FORCE_SUB_3
+        and not FORCE_SUB_2
+        and not FORCE_SUB_4
+        and not FORCE_SUB_5
+        and not FORCE_SUB_6
+    ):
+        buttons = [
+            [
+                InlineKeyboardButton(text="ʜᴇʟᴘ & ᴄᴏᴍᴍᴀɴᴅs", callback_data="help"),
+            ],
+            [
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 1", url=client.invitelink),
+                InlineKeyboardButton(text="ᴄʜᴀɴɴᴇʟ 2", url=client.invitelink3),
+            ],
+            [InlineKeyboardButton(text="ᴛᴜᴛᴜᴘ", callback_data="close")],
+        ]
+        return buttons
+
     # Flexiable 3 Subs
     if (
         FORCE_SUB_1
@@ -314,6 +335,34 @@ def fsub_button(client, message):
             [
                 InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ", url=client.invitelink),
                 InlineKeyboardButton(text="ᴊᴏɪɴ ɢʀᴏᴜᴘ", url=client.invitelink2),
+            ],
+        ]
+        try:
+            buttons.append(
+                [
+                    InlineKeyboardButton(
+                        text="ᴄᴏʙᴀ ʟᴀɢɪ",
+                        url=f"https://t.me/{client.username}?start={message.command[1]}",
+                    )
+                ]
+            )
+        except IndexError:
+            pass
+        return buttons
+
+    # Flexiable 2 Subs
+    if (
+        FORCE_SUB_1
+        and FORCE_SUB_3
+        and not FORCE_SUB_2
+        and not FORCE_SUB_4
+        and not FORCE_SUB_5
+        and not FORCE_SUB_6
+    ):
+        buttons = [
+            [
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 1", url=client.invitelink),
+                InlineKeyboardButton(text="ᴊᴏɪɴ ᴄʜᴀɴɴᴇʟ 2", url=client.invitelink2),
             ],
         ]
         try:
