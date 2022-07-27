@@ -28,6 +28,7 @@ from helper_func import (
     subssixs,
     subsone,
     subsonetwo,
+    subsonetri,
     subsonetwotri,
     substri,
     substwo,
@@ -44,6 +45,7 @@ from .button import fsub_button, start_button
     & substri
     & subsfour
     & subsonetwo
+    & subsonetri
     & subsonetwotri
     & subsfours
     & subsfives
