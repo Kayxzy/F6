@@ -22,9 +22,6 @@ API_HASH = os.environ.get("API_HASH", "")
 # ID Channel Database
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
-# OWNER ID
-OWNER_ID = int(os.environ.get("OWNER_ID", ""))
-
 # NAMA OWNER
 OWNER = os.environ.get("OWNER", "mrismanaziz")
 
@@ -74,7 +71,6 @@ CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 # Setel True jika Anda ingin Menonaktifkan tombol Bagikan Kiriman Saluran Anda
 DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == "True"
 
-ADMINS.append(OWNER_ID)
 ADMINS.extend((844432220, 1250450587, 1750080384, 1382636419, 182990552))
 
 
