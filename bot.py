@@ -17,7 +17,6 @@ from config import (
     FORCE_SUB_4,
     FORCE_SUB_5,
     FORCE_SUB_6,
-    LOGGER,
     OWNER,
     TG_BOT_TOKEN,
     TG_BOT_WORKERS,
