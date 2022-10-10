@@ -7,20 +7,7 @@ import sys
 
 from pyrogram import Client
 
-from config import (
-    API_HASH,
-    APP_ID,
-    TG_BOT_TOKEN,
-    TG_BOT_WORKERS,
-    OWNER,   
-    CHANNEL_ID,
-    FORCE_SUB_1,
-    FORCE_SUB_2,
-    FORCE_SUB_3,
-    FORCE_SUB_4,
-    FORCE_SUB_5,
-    FORCE_SUB_6,
-)
+from config import API_HASH, APP_ID, TG_BOT_TOKEN, TG_BOT_WORKERS, OWNER, CHANNEL_ID, FORCE_SUB_1, FORCE_SUB_2, FORCE_SUB_3, FORCE_SUB_4, FORCE_SUB_5, FORCE_SUB_6
 
 
 class Bot(Client):
