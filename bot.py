@@ -19,7 +19,6 @@ from config import (
     FORCE_SUB_6,
     OWNER,
     TG_BOT_TOKEN,
-    TG_BOT_WORKERS,
 )
 
 
