@@ -152,6 +152,7 @@ class Bot(Client):
                 )
                 sys.exit()
 
+
         if FORCE_SUB_5:
             try:
                 var = "FORCE_SUB_5"
@@ -176,6 +177,7 @@ class Bot(Client):
                     "Bot Berhenti. Gabung Group https://t.me/SharingUserbot untuk Bantuan"
                 )
                 sys.exit()
+
 
         if FORCE_SUB_6:
             try:
