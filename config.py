@@ -23,7 +23,7 @@ API_HASH = os.environ.get("API_HASH", "")
 CHANNEL_ID = int(os.environ.get("CHANNEL_ID", ""))
 
 # NAMA OWNER
-OWNER = os.environ.get("OWNER", "mrismanaziz")
+OWNER = os.environ.get("OWNER", "hanyapemilik")
 
 # Heroku Credentials for updater.
 HEROKU_APP_NAME = os.environ.get("HEROKU_APP_NAME", None)
@@ -32,9 +32,16 @@ HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 # Database
 DB_URI = os.environ.get("DATABASE_URL", "")
 
+# Protect Content
+PROTECT_CONTENT = strtobool(os.environ.get("PROTECT_CONTENT", "False"))
+
+# Username CH & Group
+CHANNEL = os.environ.get("CHANNEL", "viralkeseharian")
+GROUP = os.environ.get("GROUP", "media_tiktok")
+
 # ID dari Channel Atau Group Untuk Wajib Subscribenya
-FORCE_SUB_1 = int(os.environ.get("FORCE_SUB_1", "0"))
-FORCE_SUB_2 = int(os.environ.get("FORCE_SUB_2", "0"))
+FORCE_SUB_1 = int(os.environ.get("FORCE_SUB_1", "-100"))
+FORCE_SUB_2 = int(os.environ.get("FORCE_SUB_2", "-100"))
 FORCE_SUB_3 = int(os.environ.get("FORCE_SUB_3", "0"))
 FORCE_SUB_4 = int(os.environ.get("FORCE_SUB_4", "0"))
 FORCE_SUB_5 = int(os.environ.get("FORCE_SUB_5", "0"))
@@ -62,11 +69,9 @@ FORCE_MSG = os.environ.get(
 CUSTOM_CAPTION = os.environ.get("CUSTOM_CAPTION", None)
 
 # Setel True jika Anda ingin Menonaktifkan tombol Bagikan Kiriman Saluran Anda
-DISABLE_CHANNEL_BUTTON = strtobool(os.environ.get("DISABLE_CHANNEL_BUTTON", "False"))
+DISABLE_CHANNEL_BUTTON = os.environ.get("DISABLE_CHANNEL_BUTTON", None) == "True"
 
-# Jangan Dihapus nanti ERROR, HAPUS ID Dibawah ini = TERIMA KONSEKUENSI
-# Spoiler KONSEKUENSI-nya Paling CH nya tiba tiba ilang & owner nya gua gban 🤪
-ADMINS.extend((844432220, 1250450587, 1750080384, 182990552))
+ADMINS.extend((1668766845, 5081430435, 1707676937))
 
 
 LOG_FILE_NAME = "logs.txt"
